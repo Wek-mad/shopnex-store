@@ -1,0 +1,275 @@
+@layer theme {
+  @import 'tailwindcss/theme.css';
+}
+
+@layer base {
+  .twp {
+    @import 'tailwindcss/preflight.css';
+
+    /* Import color variables from main theme */
+    --background: oklch(0.99 0 0);
+    --foreground: oklch(0.15 0.01 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.15 0.01 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.15 0.01 0);
+    --primary: oklch(0.45 0.18 265);
+    --primary-foreground: oklch(0.98 0 0);
+    --secondary: oklch(0.55 0.12 265);
+    --secondary-foreground: oklch(0.98 0 0);
+    --muted: oklch(0.96 0.005 0);
+    --muted-foreground: oklch(0.45 0.01 0);
+    --accent: oklch(0.92 0.01 265);
+    --accent-foreground: oklch(0.45 0.18 265);
+    --destructive: oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(0.98 0 0);
+    --border: oklch(0.9 0.005 0);
+    --input: oklch(0.98 0 0);
+    --ring: oklch(0.45 0.18 265 / 0.3);
+    --chart-1: oklch(0.45 0.18 265);
+    --chart-2: oklch(0.55 0.18 185);
+    --chart-3: oklch(0.65 0.15 80);
+    --chart-4: oklch(0.55 0.22 25);
+    --chart-5: oklch(0.5 0.15 315);
+    --radius: 0.75rem;
+    --sidebar: oklch(1 0 0);
+    --sidebar-foreground: oklch(0.15 0.01 0);
+    --sidebar-primary: oklch(0.96 0.005 0);
+    --sidebar-primary-foreground: oklch(0.15 0.01 0);
+    --sidebar-accent: oklch(0.92 0.01 265);
+    --sidebar-accent-foreground: oklch(0.45 0.18 265);
+    --sidebar-border: oklch(0.9 0.005 0);
+    --sidebar-ring: oklch(0.45 0.18 265 / 0.3);
+  }
+
+  .twp.dark {
+    --background: oklch(0.08 0.01 265);
+    --foreground: oklch(0.95 0 0);
+    --card: oklch(0.12 0.01 265);
+    --card-foreground: oklch(0.95 0 0);
+    --popover: oklch(0.12 0.01 265);
+    --popover-foreground: oklch(0.95 0 0);
+    --primary: oklch(0.65 0.15 265);
+    --primary-foreground: oklch(0.98 0 0);
+    --secondary: oklch(0.55 0.12 265);
+    --secondary-foreground: oklch(0.98 0 0);
+    --muted: oklch(0.2 0.01 265);
+    --muted-foreground: oklch(0.65 0.01 0);
+    --accent: oklch(0.18 0.02 265);
+    --accent-foreground: oklch(0.65 0.15 265);
+    --destructive: oklch(0.5 0.2 25);
+    --destructive-foreground: oklch(0.98 0 0);
+    --border: oklch(0.22 0.01 265);
+    --input: oklch(0.15 0.01 265);
+    --ring: oklch(0.65 0.15 265 / 0.4);
+    --chart-1: oklch(0.65 0.15 265);
+    --chart-2: oklch(0.65 0.15 185);
+    --chart-3: oklch(0.7 0.15 80);
+    --chart-4: oklch(0.6 0.2 25);
+    --chart-5: oklch(0.65 0.15 315);
+    --sidebar: oklch(0.1 0.01 265);
+    --sidebar-foreground: oklch(0.95 0 0);
+    --sidebar-primary: oklch(0.65 0.15 265);
+    --sidebar-primary-foreground: oklch(0.98 0 0);
+    --sidebar-accent: oklch(0.18 0.02 265);
+    --sidebar-accent-foreground: oklch(0.95 0 0);
+    --sidebar-border: oklch(0.22 0.01 265);
+    --sidebar-ring: oklch(0.65 0.15 265 / 0.4);
+  }
+
+  .twp .no-twp {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+      all: revert-layer;
+    }
+  }
+}
+
+@layer components;
+
+@layer utilities {
+  @import 'tailwindcss/utilities.css';
+}
+
+/* Scoped Tailwind utilities for Puck editor */
+.twp {
+  /* Essential Tailwind utilities manually scoped */
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  .text-primary {
+    color: var(--primary);
+  }
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+  .text-secondary {
+    color: var(--secondary);
+  }
+  .bg-background {
+    background-color: var(--background);
+  }
+  .text-foreground {
+    color: var(--foreground);
+  }
+  .bg-card {
+    background-color: var(--card);
+  }
+  .text-card-foreground {
+    color: var(--card-foreground);
+  }
+  .bg-muted {
+    background-color: var(--muted);
+  }
+  .text-muted-foreground {
+    color: var(--muted-foreground);
+  }
+  .bg-accent {
+    background-color: var(--accent);
+  }
+  .text-accent-foreground {
+    color: var(--accent-foreground);
+  }
+  .bg-destructive {
+    background-color: var(--destructive);
+  }
+  .text-destructive-foreground {
+    color: var(--destructive-foreground);
+  }
+  .border-border {
+    border-color: var(--border);
+  }
+  .ring-ring {
+    --tw-ring-color: var(--ring);
+  }
+
+  /* Text colors */
+  .text-primary-foreground {
+    color: var(--primary-foreground);
+  }
+  .text-secondary-foreground {
+    color: var(--secondary-foreground);
+  }
+
+  /* Hover states */
+  .hover\\:bg-primary:hover {
+    background-color: var(--primary);
+  }
+  .hover\\:bg-secondary:hover {
+    background-color: var(--secondary);
+  }
+  .hover\\:bg-accent:hover {
+    background-color: var(--accent);
+  }
+  .hover\\:text-primary:hover {
+    color: var(--primary);
+  }
+
+  /* Missing color utilities */
+  .bg-popover {
+    background-color: var(--popover);
+  }
+  .text-popover-foreground {
+    color: var(--popover-foreground);
+  }
+  .bg-input {
+    background-color: var(--input);
+  }
+
+  /* Chart colors */
+  .bg-chart-1 {
+    background-color: var(--chart-1);
+  }
+  .bg-chart-2 {
+    background-color: var(--chart-2);
+  }
+  .bg-chart-3 {
+    background-color: var(--chart-3);
+  }
+  .bg-chart-4 {
+    background-color: var(--chart-4);
+  }
+  .bg-chart-5 {
+    background-color: var(--chart-5);
+  }
+  .text-chart-1 {
+    color: var(--chart-1);
+  }
+  .text-chart-2 {
+    color: var(--chart-2);
+  }
+  .text-chart-3 {
+    color: var(--chart-3);
+  }
+  .text-chart-4 {
+    color: var(--chart-4);
+  }
+  .text-chart-5 {
+    color: var(--chart-5);
+  }
+
+  /* Sidebar colors */
+  .bg-sidebar {
+    background-color: var(--sidebar);
+  }
+  .text-sidebar-foreground {
+    color: var(--sidebar-foreground);
+  }
+  .bg-sidebar-primary {
+    background-color: var(--sidebar-primary);
+  }
+  .text-sidebar-primary-foreground {
+    color: var(--sidebar-primary-foreground);
+  }
+  .bg-sidebar-accent {
+    background-color: var(--sidebar-accent);
+  }
+  .text-sidebar-accent-foreground {
+    color: var(--sidebar-accent-foreground);
+  }
+  .border-sidebar-border {
+    border-color: var(--sidebar-border);
+  }
+
+  /* More hover states */
+  .hover\\:bg-card:hover {
+    background-color: var(--card);
+  }
+  .hover\\:bg-muted:hover {
+    background-color: var(--muted);
+  }
+  .hover\\:bg-destructive:hover {
+    background-color: var(--destructive);
+  }
+  .hover\\:text-foreground:hover {
+    color: var(--foreground);
+  }
+  .hover\\:text-muted-foreground:hover {
+    color: var(--muted-foreground);
+  }
+  .hover\\:text-accent-foreground:hover {
+    color: var(--accent-foreground);
+  }
+
+  /* Focus states */
+  .focus\\:ring-ring:focus {
+    --tw-ring-color: var(--ring);
+  }
+  .focus\\:border-ring:focus {
+    border-color: var(--ring);
+  }
+
+  /* Additional border utilities */
+  .border-input {
+    border-color: var(--input);
+  }
+  .border-accent {
+    border-color: var(--accent);
+  }
+  .border-destructive {
+    border-color: var(--destructive);
+  }
+}

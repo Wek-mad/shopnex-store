@@ -1,0 +1,186 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Modern, sophisticated color palette */
+  --background: oklch(0.99 0 0); /* Near white */
+  --foreground: oklch(0.15 0.01 0); /* Dark charcoal for text */
+  --card: oklch(1 0 0); /* Pure white for cards */
+  --card-foreground: oklch(0.15 0.01 0); /* Dark charcoal */
+  --popover: oklch(1 0 0); /* Pure white */
+  --popover-foreground: oklch(0.15 0.01 0); /* Dark charcoal */
+  --primary: oklch(0.45 0.18 265); /* Deep indigo-purple */
+  --primary-foreground: oklch(0.98 0 0); /* Near white */
+  --secondary: oklch(0.55 0.12 265); /* Lighter purple for accents */
+  --secondary-foreground: oklch(0.98 0 0); /* Near white */
+  --muted: oklch(0.96 0.005 0); /* Very light gray */
+  --muted-foreground: oklch(0.45 0.01 0); /* Medium gray */
+  --accent: oklch(0.92 0.01 265); /* Very light purple tint */
+  --accent-foreground: oklch(0.45 0.18 265); /* Deep indigo */
+  --destructive: oklch(0.55 0.22 25); /* Coral red */
+  --destructive-foreground: oklch(0.98 0 0); /* Near white */
+  --border: oklch(0.9 0.005 0); /* Light gray border */
+  --input: oklch(0.98 0 0); /* Near white */
+  --ring: oklch(0.45 0.18 265 / 0.3); /* Indigo with transparency */
+  --chart-1: oklch(0.45 0.18 265); /* Indigo */
+  --chart-2: oklch(0.55 0.18 185); /* Teal */
+  --chart-3: oklch(0.65 0.15 80); /* Gold */
+  --chart-4: oklch(0.55 0.22 25); /* Coral */
+  --chart-5: oklch(0.5 0.15 315); /* Magenta */
+  --radius: 0.75rem;
+  --sidebar: oklch(1 0 0); /* Pure white */
+  --sidebar-foreground: oklch(0.15 0.01 0); /* Dark charcoal */
+  --sidebar-primary: oklch(0.96 0.005 0); /* Very light gray */
+  --sidebar-primary-foreground: oklch(0.15 0.01 0); /* Dark charcoal */
+  --sidebar-accent: oklch(0.92 0.01 265); /* Very light purple tint */
+  --sidebar-accent-foreground: oklch(0.45 0.18 265); /* Deep indigo */
+  --sidebar-border: oklch(0.9 0.005 0); /* Light gray border */
+  --sidebar-ring: oklch(0.45 0.18 265 / 0.3); /* Indigo with transparency */
+}
+
+.dark {
+  --background: oklch(0.08 0.01 265); /* Very dark with purple tint */
+  --foreground: oklch(0.95 0 0); /* Light gray */
+  --card: oklch(0.12 0.01 265); /* Dark card with purple tint */
+  --card-foreground: oklch(0.95 0 0); /* Light gray */
+  --popover: oklch(0.12 0.01 265); /* Dark with purple tint */
+  --popover-foreground: oklch(0.95 0 0); /* Light gray */
+  --primary: oklch(0.65 0.15 265); /* Bright purple */
+  --primary-foreground: oklch(0.98 0 0); /* Near white */
+  --secondary: oklch(0.55 0.12 265); /* Medium purple */
+  --secondary-foreground: oklch(0.98 0 0); /* Near white */
+  --muted: oklch(0.2 0.01 265); /* Dark muted with purple tint */
+  --muted-foreground: oklch(0.65 0.01 0); /* Medium light gray */
+  --accent: oklch(0.18 0.02 265); /* Dark purple accent */
+  --accent-foreground: oklch(0.65 0.15 265); /* Bright purple */
+  --destructive: oklch(0.5 0.2 25); /* Bright coral red */
+  --destructive-foreground: oklch(0.98 0 0); /* Near white */
+  --border: oklch(0.22 0.01 265); /* Dark border with purple tint */
+  --input: oklch(0.15 0.01 265); /* Dark input with purple tint */
+  --ring: oklch(0.65 0.15 265 / 0.4); /* Purple ring */
+  --chart-1: oklch(0.65 0.15 265); /* Bright purple */
+  --chart-2: oklch(0.65 0.15 185); /* Bright teal */
+  --chart-3: oklch(0.7 0.15 80); /* Bright gold */
+  --chart-4: oklch(0.6 0.2 25); /* Bright coral */
+  --chart-5: oklch(0.65 0.15 315); /* Bright magenta */
+  --sidebar: oklch(0.1 0.01 265); /* Very dark sidebar */
+  --sidebar-foreground: oklch(0.95 0 0); /* Light gray */
+  --sidebar-primary: oklch(0.65 0.15 265); /* Bright purple */
+  --sidebar-primary-foreground: oklch(0.98 0 0); /* Near white */
+  --sidebar-accent: oklch(0.18 0.02 265); /* Dark purple accent */
+  --sidebar-accent-foreground: oklch(0.95 0 0); /* Light gray */
+  --sidebar-border: oklch(0.22 0.01 265); /* Dark border */
+  --sidebar-ring: oklch(0.65 0.15 265 / 0.4); /* Purple ring */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better focus styles */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary/30 ring-offset-2 ring-offset-background;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/70 dark:bg-black/70 backdrop-blur-md;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/20 rounded-full hover:bg-primary/30;
+  }
+
+  /* Loading animation */
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+}

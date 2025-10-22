@@ -1,0 +1,141 @@
+/* dark-mode.css */
+.dark {
+    /* ====================== */
+    /* PUCK DARK MODE THEME   */
+    /* ====================== */
+
+    /* Rose colors - slightly darker for dark theme */
+    --puck-color-rose-01: #fef8fc;
+    --puck-color-rose-02: #faf4f8;
+    --puck-color-rose-03: #f6eaf1;
+    --puck-color-rose-04: #efd6e3;
+    --puck-color-rose-05: #e3b8cf;
+    --puck-color-rose-06: #d89aba;
+    --puck-color-rose-07: #cc7ca5;
+    --puck-color-rose-08: #bc5089;
+    --puck-color-rose-09: #a81a66;
+    --puck-color-rose-10: #87114c;
+    --puck-color-rose-11: #670833;
+    --puck-color-rose-12: #4a001c;
+
+    /* Azure/Blue colors - inverted for dark theme */
+    --puck-color-azure-01: #f7faff;
+    --puck-color-azure-02: #f3f6fb;
+    --puck-color-azure-03: #e7eef7;
+    --puck-color-azure-04: #cfdff0;
+    --puck-color-azure-05: #abc7e5;
+    --puck-color-azure-06: #88b0da;
+    --puck-color-azure-07: #6499cf;
+    --puck-color-azure-08: #3479be;
+    --puck-color-azure-09: #0158ad;
+    --puck-color-azure-10: #014292;
+    --puck-color-azure-11: #002c77;
+    --puck-color-azure-12: #00175d;
+
+    /* Green colors - inverted for dark theme */
+    --puck-color-green-01: #f3fcf4;
+    --puck-color-green-02: #eff8f0;
+    --puck-color-green-03: #ddf3e0;
+    --puck-color-green-04: #b8e8bf;
+    --puck-color-green-05: #7dd78b;
+    --puck-color-green-06: #56c16f;
+    --puck-color-green-07: #2faa53;
+    --puck-color-green-08: #1d882f;
+    --puck-color-green-09: #0c680c;
+    --puck-color-green-10: #084e08;
+    --puck-color-green-11: #043604;
+    --puck-color-green-12: #002000;
+
+    /* Yellow colors - inverted for dark theme */
+    --puck-color-yellow-01: #fcfaf0;
+    --puck-color-yellow-02: #f9f7ed;
+    --puck-color-yellow-03: #f3efd9;
+    --puck-color-yellow-04: #e6deb1;
+    --puck-color-yellow-05: #d4c474;
+    --puck-color-yellow-06: #bfac4e;
+    --puck-color-yellow-07: #ab9429;
+    --puck-color-yellow-08: #877614;
+    --puck-color-yellow-09: #645a00;
+    --puck-color-yellow-10: #4c4000;
+    --puck-color-yellow-11: #362700;
+    --puck-color-yellow-12: #211000;
+
+    /* Red colors - inverted for dark theme */
+    --puck-color-red-01: #fff9fa;
+    --puck-color-red-02: #faf4f5;
+    --puck-color-red-03: #f6eaec;
+    --puck-color-red-04: #efd7db;
+    --puck-color-red-05: #e4b9c2;
+    --puck-color-red-06: #d99ca8;
+    --puck-color-red-07: #ce7e8e;
+    --puck-color-red-08: #bf5366;
+    --puck-color-red-09: #ac1f35;
+    --puck-color-red-10: #8a1422;
+    --puck-color-red-11: #6a0a10;
+    --puck-color-red-12: #4c0000;
+
+    /* Grey colors - inverted scale for dark theme */
+    --puck-color-grey-01: #fafafa;
+    --puck-color-grey-02: #f5f5f5;
+    --puck-color-grey-03: #efefef;
+    --puck-color-grey-04: #dcdcdc;
+    --puck-color-grey-05: #c3c3c3;
+    --puck-color-grey-06: #ababab;
+    --puck-color-grey-07: #949494;
+    --puck-color-grey-08: #767676;
+    --puck-color-grey-09: #5a5a5a;
+    --puck-color-grey-10: #404040;
+    --puck-color-grey-11: #292929;
+    --puck-color-grey-12: #181818;
+
+    /* Base colors - swapped for dark theme */
+    --puck-color-white: #181818;
+    --puck-color-black: #ffffff;
+}
+
+/* Fix viewport control icons visibility in dark mode */
+.dark .lucide {
+    stroke: var(--puck-color-grey-08) !important;
+    color: var(--puck-color-grey-08) !important;
+}
+
+.dark .lucide-smartphone,
+.dark .lucide-tablet,
+.dark .lucide-monitor,
+.dark .lucide-zoom-in,
+.dark .lucide-zoom-out {
+    stroke: var(--puck-color-grey-08) !important;
+    color: var(--puck-color-grey-08) !important;
+}
+
+/* Fix viewport controls select dropdown - using stable selectors */
+.dark select[class*="ViewportControls-zoomSelect"] {
+    background-color: var(--puck-color-grey-11) !important;
+    color: var(--puck-color-grey-01) !important;
+    border: 1px solid var(--puck-color-grey-09) !important;
+    padding: 0 0.5rem;
+}
+
+.dark select[class*="ViewportControls-zoomSelect"] option {
+    background-color: var(--puck-color-grey-11) !important;
+    color: var(--puck-color-grey-01) !important;
+}
+
+/* Fix icon buttons in dark mode - using stable selectors */
+.dark button[class*="IconButton"] {
+    color: var(--puck-color-grey-08) !important;
+}
+
+.dark button[class*="IconButton"]:hover {
+    background-color: var(--puck-color-grey-10) !important;
+    color: var(--puck-color-grey-06) !important;
+}
+
+/* Fix viewport button inner elements - using stable selectors */
+.dark span[class*="ViewportButton-inner"] {
+    color: var(--puck-color-grey-08) !important;
+}
+
+.dark span[class*="ViewportButton-inner"] svg {
+    stroke: var(--puck-color-grey-08) !important;
+}
