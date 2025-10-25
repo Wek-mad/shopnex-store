@@ -70,6 +70,68 @@ export const ManualProvider: Block = {
     },
 };
 
+export const VietQRProvider: Block = {
+    slug: "vietqr",
+    admin: {
+        disableBlockName: true,
+    },
+    fields: [
+        {
+            name: "bankId",
+            type: "text",
+            label: "Bank ID",
+            admin: {
+                description: "Bank identification code (e.g., VCB, TCB, MB, ACB, etc.)",
+            },
+            required: true,
+        },
+        {
+            name: "accountNumber",
+            type: "text",
+            label: "Account Number",
+            admin: {
+                description: "Your bank account number",
+            },
+            required: true,
+        },
+        {
+            name: "accountName",
+            type: "text",
+            label: "Account Name",
+            admin: {
+                description: "Account holder name",
+            },
+            required: true,
+        },
+        {
+            name: "template",
+            type: "select",
+            label: "QR Template",
+            options: [
+                { label: "Compact", value: "compact" },
+                { label: "Compact 2", value: "compact2" },
+                { label: "Standard", value: "qr_only" },
+                { label: "Print", value: "print" },
+            ],
+            defaultValue: "compact",
+        },
+        {
+            name: "instructions",
+            type: "textarea",
+            label: "Payment Instructions",
+            admin: {
+                description: "Additional instructions shown to customers",
+            },
+            defaultValue: "Please scan the QR code with your banking app to complete the payment.",
+        },
+    ],
+    imageURL: "/vietqr-payment.png",
+    labels: {
+        plural: "VietQR Providers",
+        singular: "VietQR Provider",
+    },
+};
+
 export const Payments: CollectionConfig = {
     slug: "payments",
     access: {
@@ -83,11 +145,11 @@ export const Payments: CollectionConfig = {
         useAsTitle: "name",
     },
     fields: [
-        {
-            name: "name",
-            type: "text",
-            required: true,
-        },
+    {
+        name: "name",
+        type: "text",
+        required: true,
+    },
         {
             name: "enabled",
             type: "checkbox",
@@ -100,7 +162,7 @@ export const Payments: CollectionConfig = {
             name: "providers",
             label: "Provider",
             type: "blocks",
-            blocks: [ManualProvider],
+            blocks: [ManualProvider, VietQRProvider],
             maxRows: 1,
         },
     ],

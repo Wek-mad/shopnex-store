@@ -4,6 +4,16 @@ import { withPayload } from '@payloadcms/next/withPayload'
 const nextConfig = {
   // Your Next.js config here
   serverExternalPackages: [],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.vietqr.io',
+        port: '',
+        pathname: '/image/**',
+      },
+    ],
+  },
   webpack: (webpackConfig, { isServer }) => {
     if (isServer) {
       webpackConfig.externals = [...(webpackConfig.externals || []), 'bufferutil', 'utf-8-validate']

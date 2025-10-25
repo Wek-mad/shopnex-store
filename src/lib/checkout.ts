@@ -120,7 +120,7 @@ export async function createOrder(orderData: {
   shipping: number
   tax: number
   total: number
-}): Promise<{ orderId?: string; error?: string }> {
+}): Promise<{ orderId?: string; redirectUrl?: string; error?: string }> {
   try {
     const requestBody = {
       items: orderData.items,
@@ -153,7 +153,7 @@ export async function createOrder(orderData: {
     }
 
     const result = await response.json()
-    return { orderId: result.orderId }
+    return { orderId: result.orderId, redirectUrl: result.redirectUrl }
   } catch (error) {
     console.error('Failed to create order:', error)
     return {

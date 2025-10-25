@@ -286,6 +286,28 @@ export interface Payment {
             blockType: 'manual';
           }
         | {
+            /**
+             * Bank identification code (e.g., VCB, TCB, MB, ACB, etc.)
+             */
+            bankId: string;
+            /**
+             * Your bank account number
+             */
+            accountNumber: string;
+            /**
+             * Account holder name
+             */
+            accountName: string;
+            template?: ('compact' | 'compact2' | 'qr_only' | 'print') | null;
+            /**
+             * Additional instructions shown to customers
+             */
+            instructions?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'vietqr';
+          }
+        | {
             providerName: string;
             testMode?: boolean | null;
             methodType?: ('card' | 'ach' | 'auto') | null;
@@ -967,6 +989,17 @@ export interface PaymentsSelect<T extends boolean = true> {
                     value?: T;
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        vietqr?:
+          | T
+          | {
+              bankId?: T;
+              accountNumber?: T;
+              accountName?: T;
+              template?: T;
+              instructions?: T;
               id?: T;
               blockName?: T;
             };

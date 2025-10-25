@@ -3,6 +3,7 @@ import { type Endpoint } from 'payload'
 
 import { stripeCheckout } from '@shopnex/stripe-plugin'
 import { manualCheckout } from './manual-checkout'
+import { vietqrCheckout } from './vietqr-checkout'
 
 interface CheckoutItem {
   id: string
@@ -135,6 +136,7 @@ const calculateShippingCost = async (shippingMethodId: string, subtotal: number,
 const providers: Record<string, (data: any) => Promise<any>> = {
   stripe: stripeCheckout,
   manual: manualCheckout,
+  vietqr: vietqrCheckout,
 }
 
 const getPaymentProvider = async (paymentMethodId: string, req: any) => {

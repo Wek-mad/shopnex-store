@@ -78,7 +78,7 @@ export async function getProduct(id: string): Promise<Product | undefined> {
     const product = await sdk.findByID(
       {
         collection: 'products',
-        id: parseInt(id),
+        id: id,
         populate: {
           collections: {
             title: true,

@@ -213,8 +213,14 @@ export function CheckoutForm() {
             // Clear cart
             clearCart();
 
-            // Redirect to confirmation
-            router.push(`/order-confirmation?orderId=${result.orderId}`);
+            // Check if payment provider returned a redirect URL (e.g., VietQR, Stripe)
+            if (result.redirectUrl) {
+                // Redirect to payment page (e.g., VietQR payment page)
+                router.push(result.redirectUrl);
+            } else {
+                // Redirect to confirmation for direct payments
+                router.push(`/order-confirmation?orderId=${result.orderId}`);
+            }
         } catch (error) {
             console.error("Checkout error:", error);
             toast.error("Checkout failed. Please try again.");
