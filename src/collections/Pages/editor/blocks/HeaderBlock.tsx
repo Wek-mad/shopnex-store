@@ -104,11 +104,11 @@ export const HeaderBlock: ComponentConfig<HeaderBlockProps> = {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
+            <div className="h-8 w-8 rounded-lg bg-white dark:bg-white border border-border flex items-center justify-center">
               {logoIcon ? (
                 <img src={logoIcon} alt={logoText} className="w-6 h-6" />
               ) : (
-                <span className="text-primary-foreground font-bold text-lg">
+                <span className="text-primary font-bold text-lg">
                   {logoText.charAt(0)}
                 </span>
               )}
